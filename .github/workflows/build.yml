@@ -35,13 +35,13 @@ jobs:
          sudo cordova build android
          ls -a
          ls -lh android/app/build/outputs/apk/debug/
-         cd android/app/build/outputs/apk/debug/
-         sudo mv app-debug.apk /home/runner/work/pomodoro/pomodoro
+         cd /home/runner/work/pomodoro-app/pomodoro-app/platforms/android/app/build/outputs/apk/debug/
+         sudo mv app-debug.apk /home/runner/work/pomodoro-app/pomodoro-app
 
      - uses: actions/upload-artifact@v3
        with:
          name: upload_debug_apk
-         path: /home/runner/work/pomodoro/pomodoro/app-debug.apk
+         path: /home/runner/work/pomodoro-app/pomodoro-app/app-debug.apk
          retention-days: 7
      
      - run: ls

@@ -1,3 +1,15 @@
+document.addEventListener('deviceready',function(){
+cordova.plugins.backgroundMode.enable();
+  cordova.plugins.backgroundMode.overrideBackButton();
+  cordova.plugins.backgroundMode.setDefaults({
+    title: 'pomodoro code',
+    text: 'Editor running',
+    icon: 'icon', // this will look for icon.png in platforms/android/res/drawable|mipmap
+    color: 'ffffff', // hex format like 'F14F4D'
+    resume: true,
+    hidden: true,
+    bigText: true
+  })
 if ("serviceWorker" in navigator) {
 	navigator.serviceWorker.register("./sw.js");
 }
@@ -1641,3 +1653,4 @@ if (savedNo !== versionNo) {
 		mainel.style.display = "flex";
 	});
 }
+})
